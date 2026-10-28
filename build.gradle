@@ -1,3 +1,36 @@
 plugins {
-    id 'com.android.application' version '8.2.2' apply false
+    id 'com.android.application'
+}
+
+android {
+    namespace 'tv.akwam.tx1s'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "tv.akwam.tx1s"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0-TX1S"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // Zero bloated dependencies so APK size stays ~400 KB on Mortal TX1-S 8GB ROM
 }
